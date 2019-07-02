@@ -5,9 +5,9 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/xxpaydb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-    username: xxpay
-    password: xxpay
+    url: jdbc:mysql://db:3306/xxpaydb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: root
+    password: root
     initialSize: 5    # 初始化大小
     minIdle: 5        # 最小
     maxActive: 20     # 最大
@@ -29,15 +29,15 @@ spring:
        #- rabbitMQ # 需要安装延迟队列插件：https://www.rabbitmq.com/blog/2015/04/16/scheduling-messages-with-rabbitmq/
 
   activemq:
-    broker-url: failover:(tcp://127.0.0.1:61616?wireFormat.maxInactivityDuration=0)
+    broker-url: failover:(tcp://activemq:61616?wireFormat.maxInactivityDuration=0)
     in-memory: true
     pool:
       enabled: true # 如果此处设置为true，需要加activemq-pool依赖包，否则会自动配置失败，报JmsMessagingTemplate注入失败
 
   rabbitmq:
-    addresses: 127.0.0.1:5672
-    username: guest
-    password: guest
+    addresses: rabbitmq:5673
+    username: mall
+    password: mall
     dynamic: true
 
 config:
@@ -46,7 +46,7 @@ config:
     return_url: http://www.xxpay.org
   wx:
     certRootPath: /home/xxpay/service/cert
-    notifyUrl: http://api.xxpay.org/notify/pay/wxPayNotifyRes.htm
+    notifyUrl: http://118.190.53.31:3020/notify/pay/wxPayNotifyRes.htm
 
 logging:
   file: ./log/xxpay4spring-boot.log
