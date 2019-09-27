@@ -1,13 +1,13 @@
 server:
-  port: 3020
+  port: 8085
 
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://db:3306/xxpaydb?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&useSSL=false
-    username: root
-    password: root
+    username: urbanfruit
+    password: 108965Haiku
     initialSize: 5    # 初始化大小
     minIdle: 5        # 最小
     maxActive: 20     # 最大
@@ -46,7 +46,7 @@ config:
     return_url: http://www.xxpay.org
   wx:
     certRootPath: /home/xxpay/service/cert
-    notifyUrl: http://118.190.53.31:3020/notify/pay/wxPayNotifyRes.htm
+    notifyUrl: http://118.190.53.31:8085/notify/pay/wxPayNotifyRes.htm
 
 logging:
   file: ./log/xxpay4spring-boot.log
