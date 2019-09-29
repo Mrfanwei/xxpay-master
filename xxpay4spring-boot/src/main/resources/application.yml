@@ -1,5 +1,5 @@
 server:
-  port: 8085
+  port: 3020
 
 spring:
   datasource:
@@ -45,8 +45,8 @@ config:
     notify_url: http://api.xxpay.org/notify/pay/aliPayNotifyRes.htm
     return_url: http://www.xxpay.org
   wx:
-    certRootPath: /home/xxpay/service/cert
-    notifyUrl: http://118.190.53.31:8085/notify/pay/wxPayNotifyRes.htm
+    certRootPath: /var/payboot/data
+    notifyUrl: http://118.190.53.31:3020/notify/pay/wxPayNotifyRes.htm
 
 logging:
   file: ./log/xxpay4spring-boot.log
